@@ -1,4 +1,4 @@
-package com.mehmetpetek.themoviedbcompose.ui.theme
+package com.mehmetpetek.themoviedbcompose.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
