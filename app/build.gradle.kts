@@ -105,17 +105,31 @@ dependencies {
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
+    implementation(libs.androidx.compose.material)
+    implementation(libs.androidx.compose.material3.windowSizeClass)
 
-    implementation(libs.navigation)
-    implementation(libs.navigation.fragment)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.savedstate)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
+    implementation(libs.lifecycle.runtimeCompose)
+
+    //Lint
+    lintChecks(libs.lint.checks)
+
+    //Navigation
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.accompanist.navigation.animation)
     implementation(libs.coil)
 
     //Async Operations
     implementation(libs.coroutines)
 
     //DI
-    implementation(libs.hilt)
+    implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
 
     //HTTP Request
     implementation(libs.retrofit)
