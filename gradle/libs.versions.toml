@@ -20,9 +20,10 @@ retrofit = "2.9.0"
 chucker = "4.0.0"
 exoplayer = "2.18.7"
 room = "2.5.0"
-coil = "2.4.0"
+coil = "2.2.2"
 androidxComposeMaterial3 = "1.1.1"
 composeLintChecks = "1.2.0"
+kotlinxCollections = "0.3.5"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -61,7 +62,8 @@ exoplayer = { group = "com.google.android.exoplayer", name = "exoplayer", versio
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
-coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
+coil-kt-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+kotlinx-collections = { group = "org.jetbrains.kotlinx", name = "kotlinx-collections-immutable", version.ref = "kotlinxCollections" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }

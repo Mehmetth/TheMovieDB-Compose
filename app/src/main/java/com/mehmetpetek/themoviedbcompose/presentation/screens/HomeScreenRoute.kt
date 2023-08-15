@@ -1,17 +1,16 @@
 package com.mehmetpetek.themoviedbcompose.presentation.screens
 
-import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.mehmetpetek.themoviedbcompose.presentation.components.CardItem
 import com.mehmetpetek.themoviedbcompose.presentation.components.LoadingContent
-
+import kotlinx.collections.immutable.toImmutableList
 
 @Composable
 fun HomeScreenRoute(
@@ -34,27 +33,23 @@ fun HomeScreenRoute(
     )
 }
 
-
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun HomeScreen(
     viewState: HomeState,
     onViewEvent: (HomeEvent) -> Unit,
     modifier: Modifier = Modifier
 ) {
+    viewState.allMovies
     LoadingContent(isLoading = viewState.isLoading, modifier = modifier.fillMaxSize()) {
-        Box(modifier = Modifier
-            .fillMaxSize()
-            .background(Color.Blue))
-        /*
-        LazyVerticalStaggeredGrid(
-            modifier = Modifier,
-            columns = StaggeredGridCells.Fixed(2),
-            contentPadding = PaddingValues(16.dp),
-            verticalItemSpacing = 16.dp,
-            horizontalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
+        LazyColumn(modifier = Modifier.fillMaxSize()) {
+            item {
+                viewState.allMovies.forEach {
+                    CardItem(
+                        title = stringResource(id = it.key.movieType),
+                        items = it.value?.results?.toImmutableList()
+                    )
+                }
+            }
         }
-        */
     }
 }

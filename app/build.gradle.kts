@@ -114,6 +114,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
     implementation(libs.lifecycle.runtimeCompose)
+    implementation(libs.kotlinx.collections)
 
     //Lint
     lintChecks(libs.lint.checks)
@@ -121,7 +122,7 @@ dependencies {
     //Navigation
     implementation(libs.androidx.navigation.compose)
     implementation(libs.accompanist.navigation.animation)
-    implementation(libs.coil)
+    implementation(libs.coil.kt.compose)
 
     //Async Operations
     implementation(libs.coroutines)
